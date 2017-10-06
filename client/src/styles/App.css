@@ -1,0 +1,108 @@
+.App {
+  text-align: center;
+}
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+.App-intro {
+  font-size: large;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.tasks .tasks-list {
+  padding: 10px 20px;
+  width: 800px;
+  margin: 20px auto;
+  list-style-type: none;
+  text-align: left;
+}
+.tasks .tasks-list .single-task {
+  margin: 5px 0 15px;
+  width: 100%;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
+  position: relative;
+}
+.tasks .tasks-list .single-task .task-panel {
+  display: flex;
+  margin-bottom: 5px;
+}
+.tasks .tasks-list .single-task .task-panel .task-date {
+  font-weight: bold;
+  flex: 1 0 auto;
+}
+.tasks .tasks-list .single-task .task-panel .task-btns {
+  flex: 0 0 auto;
+}
+.tasks .tasks-list .single-task .task-panel .task-btns .task-btn {
+  background-color: transparent;
+  border: 0;
+  font-size: 14px;
+  line-height: 18px;
+  cursor: pointer;
+}
+.tasks .tasks-list .single-task .task-panel .task-btns .edit-task {
+  color: blue;
+}
+.tasks .tasks-list .single-task .task-panel .task-btns .delete-task {
+  color: red;
+  margin-top: -2px;
+}
+.tasks .tasks-list .single-task .bottom-hover-strip {
+  height: 2px;
+  position: absolute;
+  background-color: #ccc;
+  width: 0px;
+  left: 50%;
+  bottom: -2px;
+  transition: 1.5s;
+}
+.tasks .tasks-list .single-task:hover .bottom-hover-strip {
+  background-color: #00ff3c;
+  width: 800px;
+  left: 0;
+}
+.add-task .add-task-form-container .form {
+  width: 800px;
+  margin: 10px auto;
+}
+.add-task .add-task-form-container .form .field {
+  display: block;
+  border: 2px solid #ccc;
+  margin-bottom: 10px;
+  padding: 2px 4px;
+  box-sizing: border-box;
+}
+.add-task .add-task-form-container .form .field:active,
+.add-task .add-task-form-container .form .field:focus {
+  outline-color: #00ff3c;
+  border-color: #00ff3c;
+}
+.add-task .add-task-form-container .form textarea {
+  width: 100%;
+  height: 70px;
+  resize: none;
+}
+.add-task .add-task-form-container .form .add-task-btn {
+  border: 2px solid #ccc;
+  width: 100%;
+  height: 30px;
+  background-color: transparent;
+}
+.add-task .add-task-form-container .form .add-task-btn:hover {
+  border-color: #00ff3c;
+  cursor: pointer;
+}

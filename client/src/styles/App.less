@@ -1,0 +1,177 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@base-color1: #00ff3c;
+@base-color2: #ccc;
+
+//Tasks component styles
+.tasks{
+
+  .tasks-list{
+    padding: 10px 20px;
+    width: 800px;
+    margin: 20px auto;
+    list-style-type: none;
+    text-align: left;
+
+    .single-task{
+      margin: 5px 0 15px;
+      width: 100%;
+      border-bottom: 2px solid @base-color2;
+      padding-bottom: 10px;
+      position: relative;
+
+      .task-panel{
+        display: flex;
+        margin-bottom: 5px;
+
+        .task-date{
+          font-weight: bold;
+          flex: 1 0 auto;
+        }
+
+        .task-btns{
+          flex: 0 0 auto;
+
+          .task-btn{
+            background-color: transparent;
+            border: 0;
+            font-size: 14px;
+            line-height: 18px;
+            cursor: pointer;
+          }
+
+          .edit-task{
+            color: blue;
+          }
+
+          .delete-task{
+            color: red;
+            margin-top: -2px;
+          }
+        }
+      }
+
+      .task-text{
+
+      }
+
+      .bottom-hover-strip{
+        height: 2px;
+        position: absolute;
+        background-color: @base-color2;
+        width: 0px;
+        left: 50%;
+        bottom: -2px;
+        transition: 1.5s;
+      }
+    }
+
+    .single-task:hover{
+
+      .task-panel{
+
+        .task-date{
+
+        }
+
+        .task-btns{
+
+          .task-btn{
+
+          }
+
+          .edit-task{
+
+          }
+
+          .delete-task{
+
+          }
+        }
+      }
+
+      .task-text{
+
+      }
+
+      .bottom-hover-strip{
+        background-color: @base-color1;
+        width: 800px;
+        left: 0;
+      }
+    }
+  }
+}
+
+//AddTask component styles
+.add-task{
+
+  .add-task-header{
+
+  }
+
+  .add-task-form-container{
+
+    .form{
+      width: 800px;
+      margin: 10px auto;
+
+      .field{
+        display: block;
+        border: 2px solid @base-color2;
+        margin-bottom: 10px;
+        padding: 2px 4px;
+        box-sizing: border-box;
+      }
+
+      .field:active, .field:focus{
+        outline-color: @base-color1;
+        border-color: @base-color1;
+      }
+
+      textarea{
+        width: 100%;
+        height: 70px;
+        resize: none;
+      }
+
+      .add-task-btn{
+        border: 2px solid @base-color2;
+        width: 100%;
+        height: 30px;
+
+        background-color: transparent;
+      }
+
+      .add-task-btn:hover{
+        border-color: @base-color1;
+        cursor: pointer;
+      }
+    }
+  }
+
+}
+
