@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
-import $ from 'jquery';
+// import $ from 'jquery';
 
 class AddTask extends Component {
     constructor(props) {
@@ -35,31 +35,6 @@ class AddTask extends Component {
        this.getMyDate();
     }
 
-    addTask() {
-        if(this.state.content.length >= 5){
-            alert(this.state.content);
-
-            $.ajax({
-                type: "POST",
-                url: "http://localhost:4000/api/tasks",
-                data: JSON.stringify(this.state),
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                // success: function() {
-                //
-                // },
-                error: function() {
-                    alert('error');
-                }
-
-            });
-
-        }
-        else {
-            alert('You can\'t type less than 5 characters.');
-        }
-    }
-
     writeTask(e){
         var val = e.target.value;
 
@@ -78,7 +53,7 @@ class AddTask extends Component {
                 <div className="add-task-form-container">
                     <div action="" className="form">
                         <textarea onChange={(e) => this.writeTask(e)} value={this.state.content} type="text" className="field" placeholder="I have to..." />
-                        <button className="add-task-btn" onClick={() => this.addTask()}>Add task</button>
+                        <button className="add-task-btn" onClick={this.props.addTask.bind(this,this.state.content, this.state.date)}>Add task</button>
                     </div>
                 </div>
             </div>

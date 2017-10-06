@@ -5,14 +5,14 @@ import Icon from 'react-icons-kit';
 import { remove } from 'react-icons-kit/fa/remove';
 import { edit } from 'react-icons-kit/fa/edit';
 
-import '../styles/App.css';
 
 class SingleTask extends Component {
 
-    static propTypes = {
-        content: PropTypes.string,
-        // elemId: PropTypes.number.isRequired,
-    };
+    // static propTypes = {
+    //     content: PropTypes.string,
+    //     date: PropTypes.string,
+    //     // elemId: PropTypes.number.isRequired,
+    // };
 
     editTask(){
         // alert("EDIT TASK " + this.props.elemId);

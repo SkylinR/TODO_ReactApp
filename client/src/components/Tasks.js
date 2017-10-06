@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import SingleTask from './SingleTask';
-import '../styles/App.css';
 
 class Tasks extends Component {
 

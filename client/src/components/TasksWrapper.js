@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import AddTask from './AddTask';
 import Tasks from './Tasks';
-import '../styles/App.css';
 
 import $ from 'jquery';
 
@@ -25,11 +24,42 @@ class App extends Component {
         }.bind(this));
     }
 
+    componentDidMount(){
+        console.log(this.state.tasksList, "tasklist state");
+    }
+
+    testowa(eloo){
+        console.log(eloo);
+    }
+
+    addTask(content, date) {
+        console.log(this);
+        if(content.length >= 5){
+            let singleTask = JSON.stringify({
+                content: content,
+                date: date
+            })
+            $.ajax({
+                type: "POST",
+                url: "http://localhost:4000/api/tasks",
+                data: singleTask,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                error: function() {
+                    alert('error');
+                }
+            });
+        }
+        else {
+            alert('You can\'t type less than 5 characters.');
+        }
+    }
+
     render() {
         return (
             <div className="TasksWrapper">
                 <div className="App-intro">
-                    <AddTask/>
+                    <AddTask addTask={this.addTask} />
                     <Tasks taskList={this.state.tasksList}/>
                 </div>
             </div>
