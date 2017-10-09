@@ -11,7 +11,7 @@ class AddTask extends Component {
         }
     }
 
-    getMyDate(){
+    getMyDate() {
         console.log(this.state.date);
         var today = new Date();
         var dd = today.getDate();
@@ -31,8 +31,18 @@ class AddTask extends Component {
         this.setState({date: today});
     }
 
-    componentDidMount(){
+    componentDidMount() {
        this.getMyDate();
+    }
+
+    addTask = () => {
+
+        let singleTask = {
+            content: this.state.content,
+            date: this.state.date
+        }
+
+        this.props.addTask(singleTask);
     }
 
     writeTask(e){
@@ -53,7 +63,7 @@ class AddTask extends Component {
                 <div className="add-task-form-container">
                     <div action="" className="form">
                         <textarea onChange={(e) => this.writeTask(e)} value={this.state.content} type="text" className="field" placeholder="I have to..." />
-                        <button className="add-task-btn" onClick={this.props.addTask.bind(this,this.state.content, this.state.date)}>Add task</button>
+                        <button className="add-task-btn" onClick={this.addTask}>Add task</button>
                     </div>
                 </div>
             </div>

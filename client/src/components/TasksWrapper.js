@@ -1,65 +1,56 @@
 import React, {Component} from 'react';
 import AddTask from './AddTask';
 import Tasks from './Tasks';
+import axios from 'axios';
 
 import $ from 'jquery';
 
 var root = 'http://localhost:4000/api/tasks';
 
-class App extends Component {
+class TasksWrapper extends Component {
     constructor(props) {
         super(props);
         this.state = {
             tasksList: [],
         }
+
+        this.addTask = this.addTask.bind(this);
     }
 
-    componentWillMount(){
-        $.ajax({
-            url: root,
-            method: 'GET'
-        }).then(function(tasksList) {
-            // console.log(tasksList);
-            this.setState({tasksList: tasksList})
-        }.bind(this));
-    }
+    getList = () => {
 
-    componentDidMount(){
-        console.log(this.state.tasksList, "tasklist state");
-    }
+        axios.get(root)
+            .then((tasksList) => {
+                let tasksListNewest = tasksList.data.filter(function (task, index) {
+                    if (index >= tasksList.data.length - 4) {
+                        return task;
+                    }
+                });
 
-    testowa(eloo){
-        console.log(eloo);
-    }
-
-    addTask(content, date) {
-        console.log(this);
-        if(content.length >= 5){
-            let singleTask = JSON.stringify({
-                content: content,
-                date: date
+                this.setState({tasksList: tasksListNewest})
             })
-            $.ajax({
-                type: "POST",
-                url: "http://localhost:4000/api/tasks",
-                data: singleTask,
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                error: function() {
-                    alert('error');
-                }
+            .catch(function (e) {
+                console.log(e);
             });
-        }
-        else {
-            alert('You can\'t type less than 5 characters.');
-        }
+
+    }
+
+    componentWillMount() {
+        this.getList();
+    }
+
+    addTask(singleTask) {
+        axios.post(root, singleTask)
+            .then(() => {
+                this.getList();
+            })
     }
 
     render() {
         return (
             <div className="TasksWrapper">
                 <div className="App-intro">
-                    <AddTask addTask={this.addTask} />
+                    <AddTask addTask={this.addTask}/>
                     <Tasks taskList={this.state.tasksList}/>
                 </div>
             </div>
@@ -67,4 +58,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default TasksWrapper;
