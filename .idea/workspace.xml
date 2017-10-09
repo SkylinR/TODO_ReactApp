@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="33fbb8ef-fce0-460e-a4d1-a16ebccd7ac3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/AddTask.js" afterPath="$PROJECT_DIR$/client/src/components/AddTask.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/TasksWrapper.js" afterPath="$PROJECT_DIR$/client/src/components/TasksWrapper.js" />
     </list>
     <ignored path="backendd.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,14 +38,12 @@
       <file leaf-file-name="TasksWrapper.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/TasksWrapper.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+            <state relative-caret-position="238">
+              <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
                 <element signature="n#!!block;n#constructor#0;n#TasksWrapper#0" expanded="false" />
                 <element signature="e#424#876#0" expanded="false" />
-                <element signature="n#!!block;n#componentWillMount#0;n#TasksWrapper#0" expanded="false" />
-                <element signature="n#!!block;n#addTask#0;n#TasksWrapper#0" expanded="false" />
                 <marker date="1507548528759" expanded="true" signature="431:869" ph="..." />
               </folding>
             </state>
@@ -56,17 +53,14 @@
       <file leaf-file-name="AddTask.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/components/AddTask.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+            <state relative-caret-position="510">
+              <caret line="50" column="58" selection-start-line="50" selection-start-column="58" selection-end-line="50" selection-end-column="58" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
-                <element signature="n#!!block;n#constructor#0;n#AddTask#0" expanded="false" />
                 <element signature="n#!!block;n#getMyDate#0;n#AddTask#0" expanded="false" />
-                <element signature="e#500#537#0" expanded="false" />
-                <element signature="e#557#594#0" expanded="false" />
+                <element signature="e#497#534#0" expanded="false" />
+                <element signature="e#554#591#0" expanded="false" />
                 <element signature="n#!!block;n#componentDidMount#0;n#AddTask#0" expanded="false" />
-                <element signature="n#!!block;n#writeTask#0;n#AddTask#0" expanded="false" />
-                <element signature="n#!!block;n#render#0;n#AddTask#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -332,12 +326,12 @@
       <workItem from="1507197046098" duration="6117000" />
       <workItem from="1507269095711" duration="17712000" />
       <workItem from="1507304929285" duration="5426000" />
-      <workItem from="1507533775773" duration="12313000" />
+      <workItem from="1507533775773" duration="13010000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41568000" />
+    <option name="totallyTimeSpent" value="42265000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1066" extended-state="6" />
@@ -399,8 +393,6 @@
             <element signature="e#0#39#0" expanded="true" />
             <element signature="n#!!block;n#constructor#0;n#TasksWrapper#0" expanded="false" />
             <element signature="e#424#876#0" expanded="false" />
-            <element signature="n#!!block;n#componentWillMount#0;n#TasksWrapper#0" expanded="false" />
-            <element signature="n#!!block;n#addTask#0;n#TasksWrapper#0" expanded="false" />
             <marker date="1507548528759" expanded="true" signature="431:869" ph="..." />
           </folding>
         </state>
@@ -412,13 +404,10 @@
           <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <element signature="n#!!block;n#constructor#0;n#AddTask#0" expanded="false" />
             <element signature="n#!!block;n#getMyDate#0;n#AddTask#0" expanded="false" />
-            <element signature="e#500#537#0" expanded="false" />
-            <element signature="e#557#594#0" expanded="false" />
+            <element signature="e#497#534#0" expanded="false" />
+            <element signature="e#554#591#0" expanded="false" />
             <element signature="n#!!block;n#componentDidMount#0;n#AddTask#0" expanded="false" />
-            <element signature="n#!!block;n#writeTask#0;n#AddTask#0" expanded="false" />
-            <element signature="n#!!block;n#render#0;n#AddTask#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -457,13 +446,10 @@
           <caret line="63" column="33" selection-start-line="63" selection-start-column="33" selection-end-line="63" selection-end-column="33" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <element signature="n#!!block;n#constructor#0;n#AddTask#0" expanded="false" />
             <element signature="n#!!block;n#getMyDate#0;n#AddTask#0" expanded="false" />
-            <element signature="e#500#537#0" expanded="false" />
-            <element signature="e#557#594#0" expanded="false" />
+            <element signature="e#497#534#0" expanded="false" />
+            <element signature="e#554#591#0" expanded="false" />
             <element signature="n#!!block;n#componentDidMount#0;n#AddTask#0" expanded="false" />
-            <element signature="n#!!block;n#writeTask#0;n#AddTask#0" expanded="false" />
-            <element signature="n#!!block;n#render#0;n#AddTask#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -484,8 +470,6 @@
             <element signature="e#0#39#0" expanded="true" />
             <element signature="n#!!block;n#constructor#0;n#TasksWrapper#0" expanded="false" />
             <element signature="e#424#876#0" expanded="false" />
-            <element signature="n#!!block;n#componentWillMount#0;n#TasksWrapper#0" expanded="false" />
-            <element signature="n#!!block;n#addTask#0;n#TasksWrapper#0" expanded="false" />
             <marker date="1507548528759" expanded="true" signature="431:869" ph="..." />
           </folding>
         </state>
@@ -577,16 +561,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Tasks.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="38" selection-start-line="1" selection-start-column="38" selection-end-line="1" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -603,16 +577,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Tasks.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="38" selection-start-line="1" selection-start-column="38" selection-end-line="1" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/TasksWrapper.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+        <state relative-caret-position="238">
+          <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
             <element signature="n#!!block;n#constructor#0;n#TasksWrapper#0" expanded="false" />
             <element signature="e#424#876#0" expanded="false" />
-            <element signature="n#!!block;n#componentWillMount#0;n#TasksWrapper#0" expanded="false" />
-            <element signature="n#!!block;n#addTask#0;n#TasksWrapper#0" expanded="false" />
             <marker date="1507548528759" expanded="true" signature="431:869" ph="..." />
           </folding>
         </state>
@@ -620,17 +602,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/AddTask.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+        <state relative-caret-position="510">
+          <caret line="50" column="58" selection-start-line="50" selection-start-column="58" selection-end-line="50" selection-end-column="58" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <element signature="n#!!block;n#constructor#0;n#AddTask#0" expanded="false" />
             <element signature="n#!!block;n#getMyDate#0;n#AddTask#0" expanded="false" />
-            <element signature="e#500#537#0" expanded="false" />
-            <element signature="e#557#594#0" expanded="false" />
+            <element signature="e#497#534#0" expanded="false" />
+            <element signature="e#554#591#0" expanded="false" />
             <element signature="n#!!block;n#componentDidMount#0;n#AddTask#0" expanded="false" />
-            <element signature="n#!!block;n#writeTask#0;n#AddTask#0" expanded="false" />
-            <element signature="n#!!block;n#render#0;n#AddTask#0" expanded="false" />
           </folding>
         </state>
       </provider>

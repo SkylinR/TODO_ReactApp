@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
-// import $ from 'jquery';
+import $ from 'jquery';
 
 class AddTask extends Component {
     constructor(props) {
@@ -37,12 +37,21 @@ class AddTask extends Component {
 
     addTask = () => {
 
-        let singleTask = {
-            content: this.state.content,
-            date: this.state.date
+        if(this.state.content.length >= 5){
+            let singleTask = {
+                content: this.state.content,
+                date: this.state.date
+            }
+
+            this.props.addTask(singleTask);
+
+            this.setState({content: ""});
+        }
+        else{
+            alert("You need to type at least 5 characters.")
         }
 
-        this.props.addTask(singleTask);
+
     }
 
     writeTask(e){
@@ -62,7 +71,7 @@ class AddTask extends Component {
                 <h1 className="add-task-header">Write task down</h1>
                 <div className="add-task-form-container">
                     <div action="" className="form">
-                        <textarea onChange={(e) => this.writeTask(e)} value={this.state.content} type="text" className="field" placeholder="I have to..." />
+                        <textarea id="txt-new-task" onChange={(e) => this.writeTask(e)} value={this.state.content} type="text" className="field" placeholder="I have to..." />
                         <button className="add-task-btn" onClick={this.addTask}>Add task</button>
                     </div>
                 </div>
