@@ -3,8 +3,6 @@ import AddTask from './AddTask';
 import Tasks from './Tasks';
 import axios from 'axios';
 
-import $ from 'jquery';
-
 var root = 'http://localhost:4000/api/tasks';
 
 class TasksWrapper extends Component {
@@ -17,6 +15,10 @@ class TasksWrapper extends Component {
         this.addTask = this.addTask.bind(this);
     }
 
+    componentWillMount() {
+        this.getList();
+    }
+
     getList = () => {
 
         axios.get(root)
@@ -25,18 +27,17 @@ class TasksWrapper extends Component {
                     if (index >= tasksList.data.length - 4) {
                         return task;
                     }
+                    else {
+                        return 0;
+                    }
                 });
 
-                this.setState({tasksList: tasksListNewest})
+                this.setState({tasksList: tasksListNewest});
             })
             .catch(function (e) {
                 console.log(e);
             });
 
-    }
-
-    componentWillMount() {
-        this.getList();
     }
 
     addTask(singleTask) {
@@ -50,7 +51,7 @@ class TasksWrapper extends Component {
         return (
             <div className="TasksWrapper">
                 <div className="App-intro">
-                    <AddTask addTask={this.addTask}/>
+                    <AddTask addTask={this.addTask} />
                     <Tasks taskList={this.state.tasksList}/>
                 </div>
             </div>

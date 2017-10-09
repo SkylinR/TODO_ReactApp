@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
-import $ from 'jquery';
 
 class AddTask extends Component {
     constructor(props) {
@@ -8,6 +7,7 @@ class AddTask extends Component {
         this.state = {
             content: '',
             date: '',
+            id: 0,
         }
     }
 

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import Icon from 'react-icons-kit';
 import { remove } from 'react-icons-kit/fa/remove';
@@ -8,20 +7,18 @@ import { edit } from 'react-icons-kit/fa/edit';
 
 class SingleTask extends Component {
 
-    // static propTypes = {
-    //     content: PropTypes.string,
-    //     date: PropTypes.string,
-    //     // elemId: PropTypes.number.isRequired,
-    // };
+    componentDidMount(){
+
+    }
 
     editTask(){
-        // alert("EDIT TASK " + this.props.elemId);
-        // console.log("edit element from database with id: " + this.props.elemId)
+        alert("EDIT TASK " + this.props.id);
+        console.log(this.props.id);
     }
 
     removeTask(){
-        // console.log("remove element from database with id: " + this.props.elemId)
-        // alert("REMOVE TASK " + this.props.elemId);
+        alert("REMOVE TASK " + this.props.id);
+        console.log(this.props.id);
     }
 
     render() {

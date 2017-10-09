@@ -6,7 +6,7 @@ const router = express.Router();
 
 // ----- NURSES ROUTES ----- //
 
-router.get('/tasks', function(req, res, next){
+router.get('/tasks', function(req, res){
     Task.find({}, function (err, task) {
         res.send(task);
     });
@@ -14,8 +14,7 @@ router.get('/tasks', function(req, res, next){
 
 router.post('/tasks', function(req, res, next){
 
-    console.log(req.body);
-
+    console.log("Added task: ", req.body);
     Task.create(req.body).then(function(task){
         res.send(task);
     }).catch(next);

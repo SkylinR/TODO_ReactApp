@@ -11,8 +11,8 @@ class Tasks extends Component {
 
     render() {
 
-        const todos = this.props.taskList.map( (e, i) => {
-                return (<SingleTask key={i+1} content={e.content} date={e.date}/>);
+        const todos = this.props.taskList.map( (e) => {
+                return (<SingleTask key={e._id} content={e.content} date={e.date} id={e._id}/>);
         });
 
         return (
