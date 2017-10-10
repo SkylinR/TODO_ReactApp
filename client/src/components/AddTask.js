@@ -50,8 +50,13 @@ class AddTask extends Component {
         else{
             alert("You need to type at least 5 characters.")
         }
+    }
 
-
+    addTaskEnter(e) {
+        if(e.charCode === 13 && !e.shiftKey){
+            e.preventDefault();
+            this.addTask();
+        }
     }
 
     writeTask(e){
@@ -71,7 +76,7 @@ class AddTask extends Component {
                 <h1 className="add-task-header">Write task down</h1>
                 <div className="add-task-form-container">
                     <div action="" className="form">
-                        <textarea id="txt-new-task" onChange={(e) => this.writeTask(e)} value={this.state.content} type="text" className="field" placeholder="I have to..." />
+                        <textarea id="txt-new-task" onChange={(e) => this.writeTask(e)} onKeyPress={(e) => {this.addTaskEnter(e)}} value={this.state.content} type="text" className="field" placeholder="I have to..." />
                         <button className="add-task-btn" onClick={this.addTask}>Add task</button>
                     </div>
                 </div>

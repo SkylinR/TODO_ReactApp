@@ -52,7 +52,7 @@ class TasksWrapper extends Component {
             <div className="TasksWrapper">
                 <div className="App-intro">
                     <AddTask addTask={this.addTask} />
-                    <Tasks taskList={this.state.tasksList}/>
+                    <Tasks taskList={this.state.tasksList} getList={this.getList}/>
                 </div>
             </div>
         );

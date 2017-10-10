@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 import Icon from 'react-icons-kit';
 import { remove } from 'react-icons-kit/fa/remove';
 import { edit } from 'react-icons-kit/fa/edit';
 
 
+
 class SingleTask extends Component {
+
+    root = 'http://localhost:4000/api/tasks/';
 
     componentDidMount(){
 
@@ -17,8 +21,12 @@ class SingleTask extends Component {
     }
 
     removeTask(){
-        alert("REMOVE TASK " + this.props.id);
-        console.log(this.props.id);
+
+        axios.delete(this.root + this.props.id)
+            .then(()=>{
+            this.props.getList();
+        });
+
     }
 
     render() {
