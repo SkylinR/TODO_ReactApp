@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import AddTask from './AddTask';
 import Tasks from './Tasks';
+import EditTask from './EditTask';
 import axios from 'axios';
 
-var root = 'http://localhost:4000/api/tasks';
-
 class TasksWrapper extends Component {
+
+    root = 'http://localhost:4000/api/tasks';
+
     constructor(props) {
         super(props);
         this.state = {
@@ -21,7 +23,7 @@ class TasksWrapper extends Component {
 
     getList = () => {
 
-        axios.get(root)
+        axios.get(this.root)
             .then((tasksList) => {
                 let tasksListNewest = tasksList.data.filter(function (task, index) {
                     if (index >= tasksList.data.length - 4) {
@@ -41,7 +43,7 @@ class TasksWrapper extends Component {
     }
 
     addTask(singleTask) {
-        axios.post(root, singleTask)
+        axios.post(this.root, singleTask)
             .then(() => {
                 this.getList();
             })
@@ -49,10 +51,11 @@ class TasksWrapper extends Component {
 
     render() {
         return (
-            <div className="TasksWrapper">
-                <div className="App-intro">
+            <div className="tasks-wrapper">
+                <div className="app-intro">
                     <AddTask addTask={this.addTask} />
                     <Tasks taskList={this.state.tasksList} getList={this.getList}/>
+                    <EditTask />
                 </div>
             </div>
         );

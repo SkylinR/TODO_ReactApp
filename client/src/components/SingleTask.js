@@ -11,13 +11,31 @@ class SingleTask extends Component {
 
     root = 'http://localhost:4000/api/tasks/';
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            edit: false,
+            newContent: this.props.content,
+
+        }
+    }
+
     componentDidMount(){
 
     }
 
     editTask(){
-        alert("EDIT TASK " + this.props.id);
         console.log(this.props.id);
+        this.props.clearEditTask(this.props.id);
+        // this.setState({edit: !this.state.edit});
+    }
+
+    rewriteTask(e){
+        this.setState({newContent: e.target.value});
+    }
+
+    updateTask(){
+        console.log("Updated task: ", this.state.newContent);
     }
 
     removeTask(){
@@ -42,13 +60,25 @@ class SingleTask extends Component {
                     <button className="task-btn delete-task" onClick={() => this.removeTask()}><Icon size={20} icon={remove} /></button>
                 </div>
             </div>
+            { !this.props.edit &&
+                <span className="task-text">{this.props.content}</span>
+            }
+            { this.props.edit &&
+                <div>
+                    <textarea className="task-textarea" value={this.state.newContent} onChange={(e) => this.rewriteTask(e)}></textarea>
+                    <button onClick={() => this.updateTask()}>update</button>
+                </div>
+            }
 
-            <span className="task-text">{this.props.content}</span>
             <div className="bottom-hover-strip"></div>
 
         </li>
         );
     }
 }
+
+SingleTask.defaultProps = {
+    edit: false,
+};
 
 export default SingleTask;

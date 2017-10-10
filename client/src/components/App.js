@@ -5,8 +5,8 @@ import '../styles/App.css';
 class App extends Component {
     render() {
         return (
-            <div className="App">
-                <div className="App-header">
+            <div className="app">
+                <div className="app-header">
                     <h2>Welcome to TODO app</h2>
                 </div>
                 <TasksWrapper/>
