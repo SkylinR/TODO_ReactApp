@@ -7,25 +7,33 @@ class Tasks extends Component {
         super(props);
         this.state = {
             currentlyEdit: '',
+            currentlyEditState: '',
         }
         this.clearEditTask = this.clearEditTask.bind(this);
     }
 
-    clearEditTask(id){
-        console.log(id);
+    clearEditTask(id, editedState){
         this.setState({
-            currentlyEdit: id
+            currentlyEdit: id,
+            currentlyEditState: editedState,
         });
-    }
-
-    changeChildProp(){
 
     }
 
     render() {
 
         const todos = this.props.taskList.map( (e) => {
-                return (<SingleTask key={e._id} content={e.content} date={e.date} id={e._id} getList={this.props.getList} clearEditTask={this.clearEditTask} changeChildProp={this.changeChildProp}/>);
+            if(this.state.currentlyEdit === e._id){
+                if(this.state.currentlyEditState){
+                    return (<SingleTask key={e._id} content={e.content} date={e.date} id={e._id} getList={this.props.getList} clearEditTask={this.clearEditTask} changeChildProp={this.changeChildProp} edit={false}/>);
+                }
+                else{
+                    return (<SingleTask key={e._id} content={e.content} date={e.date} id={e._id} getList={this.props.getList} clearEditTask={this.clearEditTask}  edit={true}/>);
+                }
+            }
+            else{
+                return (<SingleTask key={e._id} content={e.content} date={e.date} id={e._id} getList={this.props.getList} clearEditTask={this.clearEditTask} changeChildProp={this.changeChildProp} edit={false}/>);
+            }
         });
 
         return (

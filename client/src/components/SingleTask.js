@@ -14,20 +14,21 @@ class SingleTask extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            edit: false,
+            edit: this.props.edit,
             newContent: this.props.content,
 
         }
     }
 
     componentDidMount(){
-
+        // console.log(this.props.edit);
     }
 
     editTask(){
-        console.log(this.props.id);
-        this.props.clearEditTask(this.props.id);
-        // this.setState({edit: !this.state.edit});
+        this.props.clearEditTask(this.props.id, this.props.edit);
+        console.log(this);
+        console.log(this.aaaaaaaaaa);
+        console.log(this.context);
     }
 
     rewriteTask(e){
@@ -57,16 +58,16 @@ class SingleTask extends Component {
                 <div className="task-date">{this.props.date}</div>
                 <div className="task-btns">
                     <button className="task-btn edit-task" onClick={() => this.editTask()}><Icon size={20} icon={edit} /></button>
-                    <button className="task-btn delete-task" onClick={() => this.removeTask()}><Icon size={20} icon={remove} /></button>
+                    <button className="task-btn delete-task" onClick={() => {if(window.confirm('Delete item?')) this.removeTask();}}><Icon size={20} icon={remove} /></button>
                 </div>
             </div>
             { !this.props.edit &&
                 <span className="task-text">{this.props.content}</span>
             }
             { this.props.edit &&
-                <div>
-                    <textarea className="task-textarea" value={this.state.newContent} onChange={(e) => this.rewriteTask(e)}></textarea>
-                    <button onClick={() => this.updateTask()}>update</button>
+                <div className="edit-task-container">
+                    <textarea className="task-textarea" value={this.state.newContent} onChange={(e) => this.rewriteTask(e)} ref={(input) => { this.aaaaaaaaaa = input; }} ></textarea><br/>
+                    <button className="btn btn-update-task" onClick={() => this.updateTask()}>update</button>
                 </div>
             }
 

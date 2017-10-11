@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 .app {
   text-align: center;
 }
@@ -25,6 +28,7 @@
 .tasks .tasks-list {
   padding: 10px 20px;
   width: 800px;
+  box-sizing: content-box;
   margin: 20px auto;
   list-style-type: none;
   text-align: left;
@@ -105,4 +109,26 @@
 .add-task .add-task-form-container .form .add-task-btn:hover {
   border-color: #00ff3c;
   cursor: pointer;
+}
+.edit-task-container {
+  text-align: right;
+}
+.edit-task-container .task-textarea {
+  width: 100%;
+  border: 2px solid #ccc;
+  height: 56px;
+}
+.edit-task-container .btn-update-task {
+  width: 200px;
+  border: 2px solid #ccc;
+  height: 25px;
+  text-align: center;
+  background-color: #fff;
+  margin-left: auto;
+  cursor: pointer;
+}
+.edit-task-container .task-textarea:focus,
+.edit-task-container .btn-update-task:hover {
+  border-color: #00ff3c;
+  outline: none;
 }

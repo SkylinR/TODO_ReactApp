@@ -1,3 +1,7 @@
+*{
+  box-sizing: border-box;
+}
+
 .app {
   text-align: center;
 }
@@ -32,6 +36,7 @@
   .tasks-list{
     padding: 10px 20px;
     width: 800px;
+    box-sizing: content-box;
     margin: 20px auto;
     list-style-type: none;
     text-align: left;
@@ -171,6 +176,32 @@
         cursor: pointer;
       }
     }
+  }
+
+}
+
+.edit-task-container{
+  text-align: right;
+
+  .task-textarea{
+    width: 100%;
+    border: 2px solid @base-color2;
+    height: 56px;
+  }
+
+  .btn-update-task{
+    width: 200px;
+    border: 2px solid @base-color2;
+    height: 25px;
+    text-align: center;
+    background-color: #fff;
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+  .task-textarea:focus, .btn-update-task:hover{
+    border-color: @base-color1;
+    outline: none;
   }
 
 }

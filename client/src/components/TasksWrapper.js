@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import AddTask from './AddTask';
 import Tasks from './Tasks';
-import EditTask from './EditTask';
 import axios from 'axios';
 
 class TasksWrapper extends Component {
@@ -55,7 +54,6 @@ class TasksWrapper extends Component {
                 <div className="app-intro">
                     <AddTask addTask={this.addTask} />
                     <Tasks taskList={this.state.tasksList} getList={this.getList}/>
-                    <EditTask />
                 </div>
             </div>
         );
